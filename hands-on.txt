@@ -1,0 +1,8 @@
+Hands-on topics:
+1) EC2, ALB, ASG [Done]
+2) S3 [Done]
+3) SQS, SNS
+4) Container  
+5) Lambda 
+6) API Gateway 
+7) DynamoDB
