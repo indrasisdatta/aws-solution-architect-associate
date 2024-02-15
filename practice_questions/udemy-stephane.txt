@@ -32,3 +32,69 @@ Q24. An IT company provides Amazon Simple Storage Service (Amazon S3) bucket acc
 As a Solutions Architect, which of the following would you suggest as the MOST optimized way of controlling access for this use-case?    
     Ans: Use Amazon S3 Bucket Policies
 
+Q25. An e-commerce company has copied 1 petabyte of data from its on-premises data center to an Amazon S3 bucket in the us-west-1 Region using an AWS Direct Connect link. The company now wants to set up a one-time copy of the data to another Amazon S3 bucket in the us-east-1 Region. The on-premises data center does not allow the use of AWS Snowball.
+As a Solutions Architect, which of the following options can be used to accomplish this goal? (Select two)
+    Ans: 
+     - Copy data from the source bucket to the destination bucket using the aws S3 sync command
+     - Set up Amazon S3 batch replication to copy objects across Amazon S3 buckets in another Region using S3 console and then delete the replication configuration
+
+Q35. A Big Data processing company has created a distributed data processing framework that performs best if the network performance between the processing machines is high. The application has to be deployed on AWS, and the company is only looking at performance as the key measure.
+As a Solutions Architect, which deployment do you recommend?
+    Ans: Use a cluster placement group 
+
+Q36. A retail company uses AWS Cloud to manage its technology infrastructure. The company has deployed its consumer-focused web application on Amazon EC2-based web servers and uses Amazon RDS PostgreSQL database as the data store. The PostgreSQL database is set up in a private subnet that allows inbound traffic from selected Amazon EC2 instances. The database also uses AWS Key Management Service (AWS KMS) for encrypting data at rest.
+Which of the following steps would you recommend to facilitate secure access to the database?
+    Ans: Configure Amazon RDS to use SSL for data in transit
+
+Q38. The infrastructure team at a company maintains 5 different VPCs (let's call these VPCs A, B, C, D, E) for resource isolation. Due to the changed organizational structure, the team wants to interconnect all VPCs together. To facilitate this, the team has set up VPC peering connection between VPC A and all other VPCs in a hub and spoke model with VPC A at the center. However, the team has still failed to establish connectivity between all VPCs.
+As a solutions architect, which of the following would you recommend as the MOST resource-efficient and scalable solution?
+    Ans: Use AWS transit gateway to interconnect the VPCs
+
+Q39. A leading online gaming company is migrating its flagship application to AWS Cloud for delivering its online games to users across the world. The company would like to use a Network Load Balancer to handle millions of requests per second. The engineering team has provisioned multiple instances in a public subnet and specified these instance IDs as the targets for the NLB.
+As a solutions architect, can you help the engineering team understand the correct routing mechanism for these target instances?
+    Ans: Traffic is routed to instances using the primary private IP address specified in the primary network interface for the instance
+
+Q42. The DevOps team at an IT company is provisioning a two-tier application in a VPC with a public subnet and a private subnet. The team wants to use either a Network Address Translation (NAT) instance or a Network Address Translation (NAT) gateway in the public subnet to enable instances in the private subnet to initiate outbound IPv4 traffic to the internet but needs some technical assistance in terms of the configuration options available for the Network Address Translation (NAT) instance and the Network Address Translation (NAT) gateway.
+As a solutions architect, which of the following options would you identify as CORRECT? (Select three)
+    Ans: 
+        - NAT instance can be used as a bastion server
+        - Security Groups can be associated with a NAT instance
+        - NAT instance supports port forwarding
+
+Q43. A cyber security company is running a mission critical application using a single Spread placement group of Amazon EC2 instances. The company needs 15 Amazon EC2 instances for optimal performance.
+How many Availability Zones (AZs) will the company need to deploy these Amazon EC2 instances per the given use-case?
+    Ans: 3 
+    (Spread placement group - max 7 running instances per AZ per group)
+
+Q44. A media company wants to get out of the business of owning and maintaining its own IT infrastructure. As part of this digital transformation, the media company wants to archive about 5 petabytes of data in its on-premises data center to durable long term storage.
+As a solutions architect, what is your recommendation to migrate this data in the MOST cost-optimal way?
+    Ans: Transfer the on-premises data into multiple AWS Snowball Edge Storage Optimized devices. Copy the AWS Snowball Edge data into Amazon S3 and create a lifecycle policy to transition the data into Amazon S3 Glacier
+    (You can't directly copy data from AWS Snowball Edge devices into Amazon S3 Glacier)
+
+Q55. An IT company has built a custom data warehousing solution for a retail organization by using Amazon Redshift. As part of the cost optimizations, the company wants to move any historical data (any data older than a year) into Amazon S3, as the daily analytical reports consume data for just the last one year. However the analysts want to retain the ability to cross-reference this historical data along with the daily reports.
+The company wants to develop a solution with the LEAST amount of effort and MINIMUM cost. As a solutions architect, which option would you recommend to facilitate this use-case?
+    Ans: Use Amazon Redshift Spectrum to create Amazon Redshift cluster tables pointing to the underlying historical data in Amazon S3. The analytics team can then query this historical data to cross-reference with the daily reports from Redshift
+
+Q57. A retail company wants to rollout and test a blue-green deployment for its global application in the next 48 hours. Most of the customers use mobile phones which are prone to Domain Name System (DNS) caching. The company has only two days left for the annual Thanksgiving sale to commence.
+As a Solutions Architect, which of the following options would you recommend to test the deployment on as many users as possible in the given time frame?
+    Ans: Use AWS Global Accelerator to distribute a portion of traffic to a particular deployment
+    (without being subject to DNS caching on client devices and internet resolvers, traffic dials and endpoint weights changes are effective within seconds)
+
+Q59. A media company has its corporate headquarters in Los Angeles with an on-premises data center using an AWS Direct Connect connection to the AWS VPC. The branch offices in San Francisco and Miami use AWS Site-to-Site VPN connections to connect to the AWS VPC. The company is looking for a solution to have the branch offices send and receive data with each other as well as with their corporate headquarters.
+As a solutions architect, which of the following AWS services would you recommend addressing this use-case?
+    Ans: AWS VPN CloudHub
+
+Q60. An Electronic Design Automation (EDA) application produces massive volumes of data that can be divided into two categories. The 'hot data' needs to be both processed and stored quickly in a parallel and distributed fashion. The 'cold data' needs to be kept for reference with quick access for reads and updates at a low cost.
+Which of the following AWS services is BEST suited to accelerate the aforementioned chip design process?
+    Ans: Amazon FSx for Lustre
+    (ability to both process the 'hot data' in a parallel and distributed fashion as well as easily store the 'cold data' on Amazon S3)
+
+Q63. A media company has created an AWS Direct Connect connection for migrating its flagship application to the AWS Cloud. The on-premises application writes hundreds of video files into a mounted NFS file system daily. Post-migration, the company will host the application on an Amazon EC2 instance with a mounted Amazon Elastic File System (Amazon EFS) file system. Before the migration cutover, the company must build a process that will replicate the newly created on-premises video files to the Amazon EFS file system.
+Which of the following represents the MOST operationally efficient way to meet this requirement?
+    Ans: Configure an AWS DataSync agent on the on-premises server that has access to the NFS file system. Transfer data over the AWS Direct Connect connection to an AWS PrivateLink interface VPC endpoint for Amazon EFS by using a private VIF. Set up an AWS DataSync scheduled task to send the video files to the Amazon EFS file system every 24 hours
+
+Q65. A retail company uses AWS Cloud to manage its IT infrastructure. The company has set up AWS Organizations to manage several departments running their AWS accounts and using resources such as Amazon EC2 instances and Amazon RDS databases. The company wants to provide shared and centrally-managed VPCs to all departments using applications that need a high degree of interconnectivity.
+As a solutions architect, which of the following options would you choose to facilitate this use-case?  
+    Ans: Use VPC sharing to share one or more subnets with other AWS accounts belonging to the same parent organization from AWS Organizations
+_____________________________________________________________________
+
