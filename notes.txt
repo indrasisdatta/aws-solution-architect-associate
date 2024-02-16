@@ -1,3 +1,21 @@
 Udemy Course: https://cognizant.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/learn/lecture/33878680#overview
 
 
+General Purpose SSD (gp2) volumes offer cost-effective storage that is ideal for a broad range of workloads. These volumes deliver single-digit millisecond latencies and the ability to burst to 3,000 IOPS for extended periods of time.
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html
+
+File gateway - mount via NFS and SMB protocol 
+
+A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses. Instances in either VPC can communicate with each other as if they are within the same network.
+You can create a VPC peering connection between your own VPCs, or with a VPC in another AWS account. The VPCs can be in different regions (also known as an inter-region VPC peering connection).
+
+Elastic Fabric Adapter, Elastic Network Adapter 
+
+The best way to encrypt an existing database is to take a snapshot, encrypt a copy of the snapshot and restore the snapshot to a new RDS DB instance. This results in an encrypted database that is a new instance. Applications must be updated to use the new RDS DB endpoint.
+
+Global Accelerator (route TCP and UDP traffic to a healthy application endpoint in the closest AWS Region to the user)
+
+Cloudfront - You can set up CloudFront with origin failover for scenarios that require high availability. To get started, you create an origin group with two origins: a primary and a secondary. If the primary origin is unavailable or returns specific HTTP response status codes that indicate a failure, CloudFront automatically switches to the secondary origin.
+
+RDS - You cannot configure a multi-AZ DB instance to run in another Region, it must be in the same Region but in a different Availability Zone.
+
