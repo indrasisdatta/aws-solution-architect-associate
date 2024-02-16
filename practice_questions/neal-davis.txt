@@ -1,0 +1,86 @@
+Practice Set 1
+
+    Q3. An application is being created that will use Amazon EC2 instances to generate and store data. Another set of EC2 instances will then analyze and modify the data. Storage requirements will be significant and will continue to grow over time. The application architects require a storage solution.
+    Which actions would meet these needs?
+        Ans: Store the data in an Amazon EFS filesystem. Mount the file system on the application instances
+
+    Q4. A company provides a REST-based interface to an application that allows a partner company to send data in near-real time. The application then processes the data that is received and stores it for later analysis. The application runs on Amazon EC2 instances.
+    The partner company has received many 503 Service Unavailable Errors when sending data to the application and the compute capacity reaches its limits and is unable to process requests when spikes in data volume occur.
+    Which design should a Solutions Architect implement to improve scalability?
+        Ans: Use Amazon Kinesis Data Streams to ingest the data. Process the data using AWS Lambda functions
+
+    Q6. The database tier of a web application is running on a Windows server on-premises. The database is a Microsoft SQL Server database. The application owner would like to migrate the database to an Amazon RDS instance. How can the migration be executed with minimal administrative effort and downtime?
+        Ans: Use the AWS Database Migration Service (DMS) to directly migrate the database to RDS
+
+    Q7. A company has deployed a new website on Amazon EC2 instances behind an Application Load Balancer (ALB). Amazon Route 53 is used for the DNS service. The company has asked a Solutions Architect to create a backup website with support contact details that users will be directed to automatically if the primary website is down.
+    How should the Solutions Architect deploy this solution cost-effectively?
+        Ans: Configure a static website using Amazon S3 and create a Route 53 failover routing policy
+
+    Q10. A company runs a web application that serves weather updates. The application runs on a fleet of Amazon EC2 instances in a Multi-AZ Auto scaling group behind an Application Load Balancer (ALB). The instances store data in an Amazon Aurora database. A solutions architect needs to make the application more resilient to sporadic increases in request rates.
+    Which architecture should the solutions architect implement? (Select TWO.)
+        Ans: Add Amazon Aurora Replicas
+            Add an Amazon CloudFront distribution in front of the ALB
+
+    Q15. A company hosts a multiplayer game on AWS. The application uses Amazon EC2 instances in a single Availability Zone and users connect over Layer 4. Solutions Architect has been tasked with making the architecture highly available and also more cost-effective.
+    How can the solutions architect best meet these requirements? (Select TWO.)
+        Ans: Configure a Network Load Balancer in front of the EC2 instances
+            Configure an Auto Scaling group to add or remove instances in multiple Availability Zones automatically
+
+    Q17. A company requires that all AWS IAM user accounts have specific complexity requirements and minimum password length. How should a Solutions Architect accomplish this?
+        Ans: Set a password policy for the entire AWS account 
+
+    Q20. A company has two accounts for perform testing and each account has a single VPC: VPC-TEST1 and VPC-TEST2. The operations team require a method of securely copying files between Amazon EC2 instances in these VPCs. The connectivity should not have any single points of failure or bandwidth constraints.
+    Which solution should a Solutions Architect recommend?
+        Ans: Create a VPC peering connection between VPC-TEST1 and VPC-TEST2
+
+    Q32. A company delivers content to subscribers distributed globally from an application running on AWS. The application uses a fleet of Amazon EC2 instance in a private subnet behind an Application Load Balancer (ALB). Due to an update in copyright restrictions, it is necessary to block access for specific countries. What is the EASIEST method to meet this requirement?    
+        Ans: Use Amazon CloudFront to serve the application and deny access to blocked countries
+
+    Q35. A company runs containerized applications for many application workloads in an on-premise data center. The company is planning to deploy containers to AWS and the chief architect has mandated that the same configuration and administrative tools must be used across all containerized environments. The company also wishes to remain cloud agnostic to safeguard against the impact of future changes in cloud strategy. How can a Solutions Architect design a managed solution that will align with open-source software?
+        Ans: Launch the containers on Amazon Elastic Kubernetes Service (EKS) and EKS worker nodes
+
+    Q36. A company is investigating methods to reduce the expenses associated with on-premises backup infrastructure. The Solutions Architect wants to reduce costs by eliminating the use of physical backup tapes. It is a requirement that existing backup applications and workflows should continue to function. What should the Solutions Architect recommend?
+        Ans: Connect the backup applications to an AWS Storage Gateway using an iSCSI-virtual tape library (VTL)
+
+    Q38. A company runs a dynamic website that is hosted on an on-premises server in the United States. The company is expanding to Europe and is investigating how they can optimize the performance of the website for European users. The website’s backed must remain in the United States. The company requires a solution that can be implemented within a few days.
+    What should a Solutions Architect recommend?    
+        Ans: Use Amazon CloudFront with a custom origin pointing to the on-premises servers
+
+    Q42. A company's application is running on Amazon EC2 instances in a single Region. In the event of a disaster, a solutions architect needs to ensure that the resources can also be deployed to a second Region.
+    Which combination of actions should the solutions architect take to     accomplish this? (Select TWO.)
+        Ans: Copy an Amazon Machine Image (AMI) of an EC2 instance and specify the second Region for the destination
+            Launch a new EC2 instance from an Amazon Machine Image (AMI) in the second Region
+
+    Q43. A company uses an Amazon RDS MySQL database instance to store customer order data. The security team have requested that SSL/TLS encryption in transit must be used for encrypting connections to the database from application servers. The data in the database is currently encrypted at rest using an AWS KMS key.
+    How can a Solutions Architect enable encryption in transit?
+        Ans: Download the AWS-provided root certificates. Use the certificates when connecting to the RDS DB instance
+
+    Q44. A web application allows users to upload photos and add graphical elements to them. The application offers two tiers of service: free and paid. Photos uploaded by paid users should be processed before those submitted using the free tier. The photos are uploaded to an Amazon S3 bucket which uses an event notification to send the job information to Amazon SQS.
+    How should a Solutions Architect configure the Amazon SQS deployment to meet these requirements?
+        Ans: Use a separate SQS Standard queue for each tier. Configure Amazon EC2 instances to prioritize polling for the paid queue over the free queue
+
+    Q47. A new application is to be published in multiple regions around the world. The Architect needs to ensure only 2 IP addresses need to be whitelisted. The solution should intelligently route traffic for lowest latency and provide fast regional failover. How can this be achieved?
+        Ans: Launch EC2 instances into multiple regions behind an NLB and use AWS Global Accelerator
+
+    Q49. A company offers an online product brochure that is delivered from a static website running on Amazon S3. The company’s customers are mainly in the United States, Canada, and Europe. The company is looking to cost-effectively reduce the latency for users in these regions.
+    What is the most cost-effective solution to these requirements?
+        Ans: Create an Amazon CloudFront distribution and set the price class to use only U.S, Canada and Europe.
+
+    Q50. An Amazon S3 bucket in the us-east-1 Region hosts the static website content of a company. The content is made available through an Amazon CloudFront origin pointing to that bucket. A second copy of the bucket is created in the ap-southeast-1 Region using cross-region replication. The chief solutions architect wants a solution that provides greater availability for the website.
+    Which combination of actions should a solutions architect take to increase availability? (Select TWO.)
+        Ans: Add an origin for ap-southeast-1 to CloudFront
+             Using us-east-1 bucket as the primary bucket and ap-southeast-1 bucket as the secondary bucket, create a CloudFront origin group
+
+    Q52. A financial services company has a web application with an application tier running in the U.S and Europe. The database tier consists of a MySQL database running on Amazon EC2 in us-west-1. Users are directed to the closest application tier using Route 53 latency-based routing. The users in Europe have reported poor performance when running queries. Which changes should a Solutions Architect make to the database tier to improve performance?
+        Ans: Migrate the database to an Amazon Aurora global database in MySQL compatibility mode. Configure the application tier in Europe to use the local reader endpoint
+
+    Q54. A team are planning to run analytics jobs on log files each day and require a storage solution. The size and number of logs is unknown and data will persist for 24 hours only. What is the MOST cost-effective solution?
+        Ans: S3 standard 
+
+    Q64. A company's web application is using multiple Amazon EC2 Linux instances and storing data on Amazon EBS volumes. The company is looking for a solution to increase the resiliency of the application in case of a failure. What should a solutions architect do to meet these requirements?
+        Ans: Create an Application Load Balancer with Auto Scaling groups across multiple Availability Zones. Store data on Amazon EFS and mount a target on each instance
+
+    Q65. A Solutions Architect has deployed an application on several Amazon EC2 instances across three private subnets. The application must be made accessible to internet-based clients with the least amount of administrative effort. How can the Solutions Architect make the application available on the internet?
+        Ans: Create an Application Load Balancer and associate three public subnets from the same Availability Zones as the private instances. Add the private instances to the ALB
+
+
