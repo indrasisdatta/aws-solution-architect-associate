@@ -84,3 +84,84 @@ Practice Set 1
         Ans: Create an Application Load Balancer and associate three public subnets from the same Availability Zones as the private instances. Add the private instances to the ALB
 
 
+Practice Set 2
+
+    Q1. A company migrated a two-tier application from its on-premises data center to AWS Cloud. A Multi-AZ Amazon RDS for Oracle deployment is used for the data tier, along with 12 TB of General Purpose SSD Amazon EBS storage. With an average document size of 6 MB, the application processes, and stores documents as binary large objects (blobs) in the database.
+    Over time, the database size has grown, which has reduced performance and increased storage costs. A highly available and resilient solution is needed to improve database performance.
+    Which solution will meet these requirements MOST cost-effectively?
+        Ans: Set up an Amazon S3 bucket. The application should be updated to use S3 buckets to store documents. Store the object metadata in the existing database
+
+    Q2. A company has divested a single business unit and needs to move the AWS account owned by the business unit to another AWS Organization. How can this be achieved?
+        Ans: Migrate the account using the AWS Organizations console
+
+    Q5. A company is planning a migration for a high performance computing (HPC) application and associated data from an on-premises data center to the AWS Cloud. The company uses tiered storage on premises with hot high-performance parallel storage to support the application during periodic runs of the application, and more economical cold storage to hold the data when the application is not actively running.
+    Which combination of solutions should a solutions architect recommend to support the storage needs of the application? (Select TWO.)
+        Ans: Amazon S3 for cold data storage
+             Amazon FSx for Lustre for high-performance parallel storage
+
+    Q6. A company runs an application in an Amazon VPC that requires access to an Amazon Elastic Container Service (Amazon ECS) cluster that hosts an application in another VPC. The company’s security team requires that all traffic must not traverse the internet.
+    Which solution meets this requirement?
+        Ans: Create a Network Load Balancer in one VPC and an AWS PrivateLink endpoint for Amazon ECS in another VPC
+
+    Q10. An application has been migrated to Amazon EC2 Linux instances. The EC2 instances run several 1-hour tasks on a schedule. There is no common programming language among these tasks, as they were written by different teams. Currently, these tasks run on a single instance, which raises concerns about performance and scalability. To resolve these concerns, a solutions architect must implement a solution. 
+    Which solution will meet these requirements with the LEAST Operational overhead?
+        Ans: Create an Amazon Machine Image (AMI) of the EC2 instance that runs the tasks. Create an Auto Scaling group with the AMI to run multiple copies of the instance
+
+    Q14. An IoT sensor is being rolled out to thousands of a company’s existing customers. The sensors will stream high volumes of data each second to a central location. A solution must be designed to ingest and store the data for analytics. The solution must provide near-real time performance and millisecond responsiveness.
+        Ans: Ingest the data into an Amazon Kinesis Data Stream. Process the data with an AWS Lambda function and then store the data in Amazon DynamoDB
+
+    Q19. A company runs a number of core enterprise applications in an on-premises data center. The data center is connected to an Amazon VPC using AWS Direct Connect. The company will be creating additional AWS accounts and these accounts will also need to be quickly, and cost-effectively connected to the on-premises data center in order to access the core applications. 
+    What deployment changes should a Solutions Architect implement to meet these requirements with the LEAST operational overhead?
+        Ans: Configure AWS Transit Gateway between the accounts. Assign Direct Connect to the transit gateway and route network traffic to the on-premises servers
+
+    Q22. A company runs an internal browser-based application. The application runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales up to 20 instances during work hours, but scales down to 2 instances overnight. Staff are complaining that the application is very slow when the day begins, although it runs well by midmorning. 
+    How should the scaling be changed to address the staff complaints and keep costs to a minimum?
+        Ans: Implement a target tracking action triggered at a lower CPU threshold, and decrease the cooldown period
+
+    Q25. An application is running on Amazon EC2 behind an Elastic Load Balancer (ELB). Content is being published using Amazon CloudFront and you need to restrict the ability for users to circumvent CloudFront and access the content directly through the ELB. 
+    How can you configure this solution?
+        Ans: Create a VPC Security Group for the ELB and use AWS Lambda to automatically update the CloudFront internal service IP addresses when they change
+
+    Q26. A shared services VPC is being setup for use by several AWS accounts. An application needs to be securely shared from the shared services VPC. The solution should not allow consumers to connect to other instances in the VPC. How can this be setup with the least administrative effort? (choose 2)
+        Ans: - Create a Network Load Balancer (NLB)
+             - Use AWS PrivateLink to expose the application as an endpoint service
+            
+    Q32. A Solutions Architect must select the most appropriate database service for two use cases. A team of data scientists perform complex queries on a data warehouse that take several hours to complete. Another team of scientists need to run fast, repeat queries and update dashboards for customer support staff.
+    Which solution delivers these requirements MOST cost-effectively?
+        Ans: RedShift for both use cases
+
+    Q34. An Amazon RDS PostgreSQL database is configured as Multi-AZ. A solutions architect needs to scale read performance and the solution must be configured for high availability. What is the most cost-effective solution?
+        Ans: Create a read replica as a Multi-AZ DB instance
+
+    Q40. A company has a file share on a Microsoft Windows Server in an on-premises data center. The server uses a local network attached storage (NAS) device to store several terabytes of files. The management team require a reduction in the data center footprint and to minimize storage costs by moving on-premises storage to AWS. 
+    What should a Solutions Architect do to meet these requirements?
+        Ans: Configure an AWS Storage Gateway file gateway
+
+    Q46. A company is deploying a new web application that will run on Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones. The application requires a shared storage solution that offers strong consistency as the content will be regularly updated.
+    Which solution requires the LEAST amount of effort?
+        Ans: Create an Amazon Elastic File System (Amazon EFS) file system and mount it on the individual Amazon EC2 instances
+
+    Q55. A company runs an application on Amazon EC2 instances which requires access to sensitive data in an Amazon S3 bucket. All traffic between the EC2 instances and the S3 bucket must not traverse the internet and must use private IP addresses. Additionally, the bucket must only allow access from services in the VPC.
+    Which combination of actions should a Solutions Architect take to meet these requirements? (Select TWO.)
+        Ans: Create a VPC endpoint for Amazon S3
+             Apply a bucket policy to restrict access to the S3 endpoint
+
+    Q58. A solutions architect has been tasked with designing a highly resilient hybrid cloud architecture connecting an on-premises data center and AWS. The network should include AWS Direct Connect (DX)
+    Which DX configuration offers the HIGHEST resiliency?
+        Ans: Configure DX connections at multiple DX locations
+
+    Q64. A company needs to store data from an application. Data in the application changes frequently. All levels of stored data must be audited under a new regulation which the company adheres to.
+    Application storage capacity is running out on the company's on-premises infrastructure. To comply with the new regulation, a solutions architect must offload some data securely to AWS to relieve the on-premises capacity issues.
+    Which solution will meet these requirements?
+        Ans: Use AWS Storage Gateway to move the existing data to Amazon S3. Use AWS CloudTrail to log management events
+
+    Q65. A company's web application is using multiple Amazon EC2 Linux instances and storing data on Amazon EBS volumes. The company is looking for a solution to increase the resiliency of the application in case of a failure. 
+    What should a solutions architect do to meet these requirements?
+        Ans: Create an Application Load Balancer with Auto Scaling groups across multiple Availability Zones. Store data on Amazon EFS and mount a target on each instance
+
+
+
+
+
+
+    
