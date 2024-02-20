@@ -86,3 +86,13 @@ How should security groups be configured in this situation? (Choose two.)
 What is the MOST secure way for the solutions architect to share the AMI with the MSP Partner's AWS account?
     Ans:  Modify the launchPermission property of the AMI. Share the AMI with the MSP Partner's AWS account only. Modify the key policy to allow the MSP Partner's AWS account to use the key. 
 
+21. A city has deployed a web application running on Amazon EC2 instances behind an Application Load Balancer (ALB). The application's users have reported sporadic performance, which appears to be related to DDoS attacks originating from random IP addresses. The city needs a solution that requires minimal configuration changes and provides an audit trail for the DDoS sources. Which solution meets these requirements?
+    Ans:  Subscribe to AWS Shield Advanced. Engage the AWS DDoS Response Team (DRT) to integrate mitigating controls into the service.
+
+22. A company runs a three-tier application in a VPC. The database tier uses an Amazon RDS for MySQL DB instance.
+The company plans to migrate the RDS for MySQL DB instance to an Amazon Aurora PostgreSQL DB cluster. The company needs a solution that replicates the data changes that happen during the migration to the new database.
+Which combination of steps will meet these requirements? (Choose two.)
+    Ans: A. Use AWS Database Migration Service (AWS DMS) Schema Conversion to transform the database objects.
+        D. Define an AWS Database Migration Service (AWS DMS) task with change data capture (CDC) to migrate the data.
+
+23. 

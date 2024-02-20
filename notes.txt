@@ -16,6 +16,11 @@ The best way to encrypt an existing database is to take a snapshot, encrypt a co
 Global Accelerator (route TCP and UDP traffic to a healthy application endpoint in the closest AWS Region to the user)
 
 Cloudfront - You can set up CloudFront with origin failover for scenarios that require high availability. To get started, you create an origin group with two origins: a primary and a secondary. If the primary origin is unavailable or returns specific HTTP response status codes that indicate a failure, CloudFront automatically switches to the secondary origin.
+CloudFront cannot expose static public IP addresses.
 
 RDS - You cannot configure a multi-AZ DB instance to run in another Region, it must be in the same Region but in a different Availability Zone.
 
+AWS DataSync can be used to automate and accelerate the replication of data to AWS storage services. 
+Note that Storage Gateway is used for hybrid scenarios where servers need local access to data with various options for storing and synchronizing the data to AWS storage services. Storage Gateway does not accelerate replication of data.
+
+A VPG is used to setup an AWS VPN which you can use in combination with Direct Connect to encrypt all data that traverses the Direct Connect link. This combination provides an IPsec-encrypted private connection that also reduces network costs, increases bandwidth throughput, and provides a more consistent network experience than internet-based VPN connections.

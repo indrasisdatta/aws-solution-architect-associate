@@ -1,4 +1,4 @@
-Practice Set 1
+Practice Set 1 (63%)
 
     Q3. An application is being created that will use Amazon EC2 instances to generate and store data. Another set of EC2 instances will then analyze and modify the data. Storage requirements will be significant and will continue to grow over time. The application architects require a storage solution.
     Which actions would meet these needs?
@@ -84,7 +84,7 @@ Practice Set 1
         Ans: Create an Application Load Balancer and associate three public subnets from the same Availability Zones as the private instances. Add the private instances to the ALB
 
 
-Practice Set 2
+Practice Set 2 (72%)
 
     Q1. A company migrated a two-tier application from its on-premises data center to AWS Cloud. A Multi-AZ Amazon RDS for Oracle deployment is used for the data tier, along with 12 TB of General Purpose SSD Amazon EBS storage. With an average document size of 6 MB, the application processes, and stores documents as binary large objects (blobs) in the database.
     Over time, the database size has grown, which has reduced performance and increased storage costs. A highly available and resilient solution is needed to improve database performance.
@@ -159,8 +159,99 @@ Practice Set 2
     What should a solutions architect do to meet these requirements?
         Ans: Create an Application Load Balancer with Auto Scaling groups across multiple Availability Zones. Store data on Amazon EFS and mount a target on each instance
 
+Pracice Set 3 (69%)
+
+    Q2. A High Performance Computing (HPC) application needs storage that can provide 135,000 IOPS. The storage layer is replicated across all instances in a cluster. 
+    What is the optimal storage solution that provides the required performance and is cost-effective
+        Ans: Use Amazon Instance Store
+
+    Q4. A Solutions Architect created the following policy and associated to an AWS IAM group containing several administrative users:
+    "IpAddress": {"aws:SourceIp": "10.1.2.0/24"}
+       Ans: Administrators can terminate an EC2 instance in the us-east-1 Region when the user's source IP is 10.1.2.28
+
+    Q19. A company runs a financial application using an Amazon EC2 Auto Scaling group behind an Application Load Balancer (ALB). When running month-end reports on a specific day and time each month the application becomes unacceptably slow. Amazon CloudWatch metrics show the CPU utilization hitting 100%. What should a solutions architect recommend to ensure the application is able to handle the workload and avoid downtime?
+        Ans: Configure an EC2 Auto Scaling scheduled scaling policy based on the monthly schedule
+
+    Q20. An organization is extending a secure development environment into AWS. They have already secured the VPC including removing the Internet Gateway and setting up a Direct Connect connection. What else needs to be done to add encryption?
+        Ans: Setup a Virtual Private Gateway (VPG)
+
+    Q25. An application is deployed on multiple AWS regions and accessed from around the world. The application exposes static public IP addresses. Some users are experiencing poor performance when accessing the application over the Internet.
+    What should a solutions architect recommend to reduce internet latency?
+        Ans: Set up AWS Global Accelerator and add endpoints
+        (Note: CloudFront cannot expose static public IP addresses)
+    
+    Q28. An online store uses an Amazon Aurora database. The database is deployed as a Multi-AZ deployment. Recently, metrics have shown that database read requests are high and causing performance issues which result in latency for write requests.
+    What should the solutions architect do to separate the read requests from the write requests?
+        Ans: Update the application to read from the Aurora Replica
+
+    Q31. A company has created a disaster recovery solution for an application that runs behind an Application Load Balancer (ALB). The DR solution consists of a second copy of the application running behind a second ALB in another Region. The Solutions Architect requires a method of automatically updating the DNS record to point to the ALB in the second Region. What action should the Solutions Architect take?
+        Ans: Enable an Amazon Route 53 health check
+
+    Q33. A company requires a fully managed replacement for an on-premises storage service. The company’s employees often work remotely from various locations. The solution should also be easily accessible to systems connected to the on-premises environment.
+    Which solution meets these requirements?
+        Ans: Use Amazon FSx to create an SMB file share. Connect remote clients to the file share over a client VPN
+
+    Q37. An application generates unique files that are returned to customers after they submit requests to the application. The application uses an Amazon CloudFront distribution for sending the files to customers. The company wishes to reduce data transfer costs without modifying the application. How can this be accomplished?
+        Ans: Use Lambda@Edge to compress the files as they are sent to users
+
+    Q38. A company has experienced malicious traffic from some suspicious IP addresses. The security team discovered the requests are from different IP addresses under the same CIDR range.
+    What should a solutions architect recommend to the team?
+        Ans: Add a deny rule in the inbound table of the network ACL with a lower rule number than other rules
+
+    Q39. An Architect needs to find a way to automatically and repeatably create many member accounts within an AWS Organization. The accounts also need to be moved into an OU and have VPCs and subnets created. 
+    What is the best way to achieve this?
+        Ans: Use CloudFormation with scripts
+
+    Q44. An application runs on Amazon EC2 Linux instances. The application generates log files which are written using standard API calls. A storage solution is required that can be used to store the files indefinitely and must allow concurrent access to all files. Which storage service meets these requirements and is the MOST cost-effective?
+        Ans: Amazon S3 
+
+    Q45. A company is deploying an analytics application on AWS Fargate. The application requires connected storage that offers concurrent access to files and high performance.
+    Which storage option should the solutions architect recommend?
+        Ans: Create an Amazon EFS file share and establish an IAM role that allows Fargate to communicate with Amazon EFS
+
+    Q48. A web application in a three-tier architecture runs on a fleet of Amazon EC2 instances. Performance issues have been reported and investigations point to insufficient swap space. The operations team requires monitoring to determine if this is correct. What should a solutions architect recommend
+        Ans: Install an Amazon CloudWatch agent on the instances. Run an appropriate script on a set schedule. Monitor SwapUtilization metrics in CloudWatch
+
+    Q53. A Solutions Architect works for a company looking to centralize its Machine Learning Operations. Currently they have a large amount of existing cloud storage to store their operational data which is used for machine learning analysis. There is some data which exists within an Amazon RDS MySQL database, and they need a solution which can easily retrieve data from the database.
+    Which service can be used to build a centralized data repository to be used for Machine Learning purposes?  
+        Ans: AWS Lake Formation
+
+    Q57. An application runs on Amazon EC2 instances backed by Amazon EBS volumes and an Amazon RDS database. The application is highly sensitive and security compliance requirements mandate that all personally identifiable information (PII) be encrypted at rest.
+    Which solution should a Solutions Architect choose to this requirement?
+        Ans: Configure Amazon EBS encryption and Amazon RDS encryption with AWS KMS keys to encrypt instance and database volumes
+
+    Q58. A company requires a high-performance file system that can be mounted on Amazon EC2 Windows instances and Amazon EC2 Linux instances. Applications running on the EC2 instances perform separate processing of the same files and the solution must provide a file system that can be mounted by all instances simultaneously.
+    Which solution meets these requirements?
+        Ans: Use Amazon FSx for Windows File Server for the Windows instances and the Linux instances
+
+    Q59. A company has created an application that stores sales performance data in an Amazon DynamoDB table. A web application is being created to display the data. A Solutions Architect must design the web application using managed services that require minimal operational maintenance.
+    Which architectures meet these requirements? (Select TWO.)
+        Ans: An Amazon API Gateway REST API invokes an AWS Lambda function. The Lambda function reads data from the DynamoDB table
+            An Amazon API Gateway REST API directly accesses the sales performance data in the DynamoDB table
+
+    Q64. A new application will be launched on an Amazon EC2 instance with an Elastic Block Store (EBS) volume. A solutions architect needs to determine the most cost-effective storage option. The application will have infrequent usage, with peaks of traffic for a couple of hours in the morning and evening. Disk I/O is variable with peaks of up to 3,000 IOPS. Which solution should the solutions architect recommend?
+        Ans: Amazon EBS General Purpose SSD (gp2)
+
+    
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
