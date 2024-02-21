@@ -95,4 +95,10 @@ Which combination of steps will meet these requirements? (Choose two.)
     Ans: A. Use AWS Database Migration Service (AWS DMS) Schema Conversion to transform the database objects.
         D. Define an AWS Database Migration Service (AWS DMS) task with change data capture (CDC) to migrate the data.
 
-23. 
+23. A company has an organization in AWS Organizations. The company runs Amazon EC2 instances across four AWS accounts in the root organizational unit (OU). There are three nonproduction accounts and one production account. The company wants to prohibit users from launching EC2 instances of a certain size in the nonproduction accounts. The company has created a service control policy (SCP) to deny access to launch instances that use the prohibited types.
+Which solutions to deploy the SCP will meet these requirements? (Choose two.)
+    Ans: B. Attach the SCP to the three nonproduction Organizations member accounts. 
+        E. Create an OU for the required accounts. Attach the SCP to the OU. Move the nonproduction member accounts into the new OU
+
+24. 
+
