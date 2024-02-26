@@ -24,3 +24,17 @@ AWS DataSync can be used to automate and accelerate the replication of data to A
 Note that Storage Gateway is used for hybrid scenarios where servers need local access to data with various options for storing and synchronizing the data to AWS storage services. Storage Gateway does not accelerate replication of data.
 
 A VPG is used to setup an AWS VPN which you can use in combination with Direct Connect to encrypt all data that traverses the Direct Connect link. This combination provides an IPsec-encrypted private connection that also reduces network costs, increases bandwidth throughput, and provides a more consistent network experience than internet-based VPN connections.
+
+Instance Store
+You can specify the instance store volumes for your instance only when you launch an instance. You can’t attach instance store volumes to an instance after you’ve launched it.
+
+Associate an AWS Direct Connect gateway with either of the following gateways:
+- A transit gateway when you have multiple VPCs in the same Region.
+- A virtual private gateway.
+
+Route table - select target as VPG (AWS side of the VPN) and not customer gateway (customer side of VPN)
+
+NACL:
+ - Default inbound rule denying all traffic 
+ - Default outbound rule denying all traffic 
+
