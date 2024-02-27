@@ -38,3 +38,16 @@ NACL:
  - Default inbound rule denying all traffic 
  - Default outbound rule denying all traffic 
 
+Multi-AZ follows synchronous replication and spans at least two Availability Zones (AZs) within a single region. 
+Read replicas follow asynchronous replication and can be within an Availability Zone (AZ), Cross-AZ, or Cross-Region
+
+Following are the unsupported life cycle transitions for S3 storage classes - Any storage class to the Amazon S3 Standard storage class. 
+- Any storage class to the Reduced Redundancy storage class. 
+- The Amazon S3 Intelligent-Tiering storage class to the Amazon S3 Standard-IA storage class. 
+- The Amazon S3 One Zone-IA storage class to the Amazon S3 Standard-IA or Amazon S3 Intelligent-Tiering storage classes.
+
+FIFO SQS Queue - supports 300 API calls per sec per API method. (3000 using batching).
+
+Cost of test file storage on Amazon S3 Standard < Cost of test file storage on Amazon EFS < Cost of test file storage on Amazon EBS
+
+
