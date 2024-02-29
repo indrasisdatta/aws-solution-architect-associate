@@ -14,6 +14,7 @@ Elastic Fabric Adapter, Elastic Network Adapter
 The best way to encrypt an existing database is to take a snapshot, encrypt a copy of the snapshot and restore the snapshot to a new RDS DB instance. This results in an encrypted database that is a new instance. Applications must be updated to use the new RDS DB endpoint.
 
 Global Accelerator (route TCP and UDP traffic to a healthy application endpoint in the closest AWS Region to the user)
+With AWS Global Accelerator, you can shift traffic gradually or all at once between the blue and the green environment and vice-versa without being subject to DNS caching on client devices and internet resolvers, traffic dials and endpoint weights changes are effective within seconds.
 
 Cloudfront - You can set up CloudFront with origin failover for scenarios that require high availability. To get started, you create an origin group with two origins: a primary and a secondary. If the primary origin is unavailable or returns specific HTTP response status codes that indicate a failure, CloudFront automatically switches to the secondary origin.
 CloudFront cannot expose static public IP addresses.
@@ -49,5 +50,28 @@ Following are the unsupported life cycle transitions for S3 storage classes - An
 FIFO SQS Queue - supports 300 API calls per sec per API method. (3000 using batching).
 
 Cost of test file storage on Amazon S3 Standard < Cost of test file storage on Amazon EFS < Cost of test file storage on Amazon EBS
+
+Migrate AWS account from one organisation to another
+1. Remove the member account from the old organization 
+2. Send an invite to the member account from the new Organization 
+3. Accept the invite to the new organization from the member account
+
+"aws:RequestedRegion": "eu-west-1" // this region can be requested. API calls can be made from anywhere
+
+Placement groups 
+1. Partition (spreads instance across logical partitions, don't share hardware eg. Hadoop, Cassandra, kafka) 
+2. Cluster (packs instances close in 1 AZ for low latency, HPC apps)
+3. Spread (each instance is placed on distinct rack, each rack with distinct N/W & power)
+
+ASG is not terminating an EC2 instance:
+1. Instance may be in impaired status
+2. Health check grace period of the instance has not expired
+3. Instnace has failed the ELB health check status
+
+You have multiple AWS accounts within a single AWS Region managed by AWS Organizations and you would like to ensure all Amazon EC2 instances in all these accounts can communicate privately
+- Create a VPC in an account and share one or more of its subnets with the other accounts using Resource Access Manager
+
+
+
 
 
