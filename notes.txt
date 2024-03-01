@@ -9,6 +9,8 @@ File gateway - mount via NFS and SMB protocol
 A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses. Instances in either VPC can communicate with each other as if they are within the same network.
 You can create a VPC peering connection between your own VPCs, or with a VPC in another AWS account. The VPCs can be in different regions (also known as an inter-region VPC peering connection).
 
+VPC peering is the most cost-effective way to connect two VPCs within the same region and AWS account. There are no additional charges for VPC peering beyond standard data transfer rates.
+
 Elastic Fabric Adapter, Elastic Network Adapter 
 
 The best way to encrypt an existing database is to take a snapshot, encrypt a copy of the snapshot and restore the snapshot to a new RDS DB instance. This results in an encrypted database that is a new instance. Applications must be updated to use the new RDS DB endpoint.
@@ -71,7 +73,12 @@ ASG is not terminating an EC2 instance:
 You have multiple AWS accounts within a single AWS Region managed by AWS Organizations and you would like to ensure all Amazon EC2 instances in all these accounts can communicate privately
 - Create a VPC in an account and share one or more of its subnets with the other accounts using Resource Access Manager
 
+GP3 offers identical latency performance to GP2 at a lower price point.
+FSx options are higher performance but more expensive and require application changes.
+GP3 aligns better with lift and shift needs as a directly attached block storage volume.
 
-
-
+Use Amazon EKS Connector to register and connect any conformant Kubernetes cluster to AWS and visualize it in the Amazon EKS console. The Amazon EKS Connector can connect the following types of Kubernetes clusters to Amazon EKS.
+ - On-premises Kubernetes clusters
+ - Self-managed clusters that are running on Amazon EC2
+ - Managed clusters from other cloud providers
 
