@@ -71,7 +71,26 @@ ASG is not terminating an EC2 instance:
 You have multiple AWS accounts within a single AWS Region managed by AWS Organizations and you would like to ensure all Amazon EC2 instances in all these accounts can communicate privately
 - Create a VPC in an account and share one or more of its subnets with the other accounts using Resource Access Manager
 
+AWS CloudFormation StackSet extends the functionality of stacks by enabling you to create, update, or delete stacks across multiple accounts and regions with a single operation.
 
+You can migrate data to Amazon Redshift databases using AWS Database Migration Service. The Amazon Redshift cluster must be in the same AWS account and the same AWS Region as the replication instance. During a database migration to Amazon Redshift, AWS DMS first moves data to an Amazon S3 bucket. When the files reside in an Amazon S3 bucket, AWS DMS then transfers them to the proper tables in the Amazon Redshift data warehouse. AWS DMS creates the S3 bucket in the same AWS Region as the Amazon Redshift database. The AWS DMS replication instance must be located in that same region.
+
+Kinesis Data streams: https://aws.amazon.com/kinesis/data-streams/faqs/
+
+Amazon Kinesis Data Firehose is used to load streaming data into data stores (Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, and Splunk) whereas Kinesis Data Streams provides support for real-time processing of streaming data. It provides ordering of records, as well as the ability to read and/or replay records in the same order to multiple downstream Amazon Kinesis Applications.
+
+AMI:
+ - You can copy an Amazon Machine Image (AMI) across AWS Regions
+ - You can share an Amazon Machine Image (AMI) with another AWS account
+ - Copying an Amazon Machine Image (AMI) backed by an encrypted snapshot cannot result in an unencrypted target snapshot
+
+SCP:
+ - If a user or role has an IAM permission policy that grants access to an action that is either not allowed or explicitly denied by the applicable service control policy (SCP), the user or role can't perform that action
+ - Service control policy (SCP) affects all users and roles in the member accounts, including root user of the member accounts
+ - Service control policy (SCP) does not affect service-linked role
+
+RDS MySQL Read replica - asynchronously copied from primary DB to read replica 
+RDS MySQL with multi AZ enabled - synchronously replicate data 
 
 
 
