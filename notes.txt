@@ -102,5 +102,5 @@ SCP:
 RDS MySQL Read replica - asynchronously copied from primary DB to read replica 
 RDS MySQL with multi AZ enabled - synchronously replicate data 
 
-
+ASG - cannot span across regions
 
