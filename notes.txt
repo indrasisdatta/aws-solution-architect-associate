@@ -108,4 +108,8 @@ An egress-only internet gateway (EIGW) is specifically designed for IPv6-only VP
 
 Amazon AppFlow is a fully managed integration service that allows you to securely transfer data between different SaaS applications and AWS services. It provides built-in encryption options and supports encryption in transit using SSL/TLS protocols. With AppFlow, you can configure the data transfer flow from Salesforce to Amazon S3, ensuring data encryption at rest by utilizing AWS KMS CMKs.
 
+AWS Storage gateway - supports AS2 protocol 
+
+Workload Discovery - visualization tool that automatically generates architecture diagrams of your workload on AWS
+
 
