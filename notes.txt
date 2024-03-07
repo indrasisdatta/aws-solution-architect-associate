@@ -17,6 +17,10 @@ The best way to encrypt an existing database is to take a snapshot, encrypt a co
 
 Global Accelerator (route TCP and UDP traffic to a healthy application endpoint in the closest AWS Region to the user)
 With AWS Global Accelerator, you can shift traffic gradually or all at once between the blue and the green environment and vice-versa without being subject to DNS caching on client devices and internet resolvers, traffic dials and endpoint weights changes are effective within seconds.
+Global Accelerator provides you with two static IP addresses that you associate with your accelerator.
+• Good fit for non-HTTP use cases, such as gaming (UDP), IoT (MQTT), or Voice over IP
+• Good for HTTP use cases that require static IP addresses
+• Good for HTTP use cases that required deterministic, fast regional failover
 
 Cloudfront - You can set up CloudFront with origin failover for scenarios that require high availability. To get started, you create an origin group with two origins: a primary and a secondary. If the primary origin is unavailable or returns specific HTTP response status codes that indicate a failure, CloudFront automatically switches to the secondary origin.
 CloudFront cannot expose static public IP addresses.
@@ -112,4 +116,19 @@ AWS Storage gateway - supports AS2 protocol
 
 Workload Discovery - visualization tool that automatically generates architecture diagrams of your workload on AWS
 
+CloudWatch Insights and Operational Visibility
+• CloudWatch Container Insights
+    - ECS, EKS, Kubernetes on EC2, Fargate, needs agent for Kubernetes
+    - Metrics and logs
+• CloudWatch Lambda Insights: Detailed metrics to troubleshoot serverless applications
+• CloudWatch Contributors Insights: Find “Top-N” Contributors through CloudWatch Logs
+• CloudWatch Application Insights
+    - Automatic dashboard to troubleshoot your application and related AWS services
 
+Neal Davis Practice test 4: Q 36, 50, 61 
+
+Examtopics recent:
+https://www.examtopics.com/discussions/amazon/view/132948-exam-aws-certified-solutions-architect-associate-saa-c03/
+
+Screenshot ques check: 
+614,617, 625, 673
