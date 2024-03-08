@@ -72,7 +72,7 @@ Placement groups
 ASG is not terminating an EC2 instance:
 1. Instance may be in impaired status
 2. Health check grace period of the instance has not expired
-3. Instnace has failed the ELB health check status
+3. Instance has failed the ELB health check status
 
 You have multiple AWS accounts within a single AWS Region managed by AWS Organizations and you would like to ensure all Amazon EC2 instances in all these accounts can communicate privately
 - Create a VPC in an account and share one or more of its subnets with the other accounts using Resource Access Manager
@@ -124,11 +124,27 @@ CloudWatch Insights and Operational Visibility
 • CloudWatch Contributors Insights: Find “Top-N” Contributors through CloudWatch Logs
 • CloudWatch Application Insights
     - Automatic dashboard to troubleshoot your application and related AWS services
+	
+RDS MySQL to Aurora MySQL
+• Option 1: DB Snapshots from RDS MySQL restored as MySQL Aurora DB
+• Option 2: Create an Aurora Read Replica from your RDSMySQL, and when the replication lag is 0, promote it as its
+own DB cluster (can take time and cost $)
+
+FSx for Windows - SMB, NTFS
+FSx for Lustre  - Custom (POSIX compliant)
+FSx for ONTAP   - NFS, SMB, iSCSI
+FSx for OpenZFS - NFS
+https://aws.amazon.com/fsx/when-to-choose-fsx/
+
+==============================================================================================
 
 Neal Davis Practice test 4: Q 36, 50, 61 
 
 Examtopics recent:
 https://www.examtopics.com/discussions/amazon/view/132948-exam-aws-certified-solutions-architect-associate-saa-c03/
 
-Screenshot ques check: 
-614,617, 625, 673
+Screenshot questions to revise: 
+614, 617, 625, 673, 674, 692, 695, 696, 731, 704, 733, 738, 752
+
+Mega quiz questions to revise:
+40, 50, 59, 76, 83, 99, 139, 147, 173, 182
