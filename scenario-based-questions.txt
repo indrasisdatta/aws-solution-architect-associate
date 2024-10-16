@@ -1,0 +1,12 @@
+1. How can you generate a trigger each time a tracked vehicle enters a specific geographic area?
+Ans: Amazon Location Services - Geofencing (create geofence to mark the area of interest on map and track devices that enter or leave the area) 
+     Tracking device (lat, long) -> Amazon location service -> Eventbridge -> Lambda -> SNS
+
+2. An e-commerce company hosts app in US region. They want users from Europe and Canada to access without any lag. What's the proper AWS solution for this?
+Ans: Global Accelerator - has edge locations worldwide, so users can connect to their nearby Edge location rather than US server. 
+     User req are routed to the faster most direct path on AWS private network instead of unpredictable public network.
+
+3.  
+
+   
+
