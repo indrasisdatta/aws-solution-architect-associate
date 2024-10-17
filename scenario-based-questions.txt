@@ -6,7 +6,17 @@ Ans: Amazon Location Services - Geofencing (create geofence to mark the area of 
 Ans: Global Accelerator - has edge locations worldwide, so users can connect to their nearby Edge location rather than US server. 
      User req are routed to the faster most direct path on AWS private network instead of unpredictable public network.
 
-3.  
+3. How would you design a highly scalable and fault tolerant Ecommerce app?
+Ans: EC2 for server (with ALB and ASG), S3 for product images, Cloudfront for content delivery, RDS for DB
+
+4. Location dependent content delivery to serve static content to end user?
+Ans:  CloudFront with Lambda@Edge enables the delivery of location-dependent static content to users with minimal latency by caching it at edge locations and customizing content based on geographic location. Lambda edge gets HTTP header to detect location.
+
+5. Real time updates
+Ans: Web sockets, Kinesis Datastreams, Appsync
+
+
+
 
    
 
