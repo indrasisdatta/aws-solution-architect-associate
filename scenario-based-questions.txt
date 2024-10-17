@@ -15,6 +15,19 @@ Ans:  CloudFront with Lambda@Edge enables the delivery of location-dependent sta
 5. Real time updates
 Ans: Web sockets, Kinesis Datastreams, Appsync
 
+6. Migrating to AWS
+Ans: Lift and shift server: On-premise server to EC2 using AWS Application Migration Service
+     DB to RDS using Database Migration services (DMS)
+     File server to S3/EFS using AWS DataSync
+
+7. How to design a chatbot that can answer natuaral language queries using enterprise data stored in S3, RDS, Jira etc.
+Ans: Amazon Q
+
+8. How to build customer support solutions using voice/text?
+Ans: Amazon Lex (bots), Amazon Connect (cloud contact centers)
+     Voice based support: Connect (handles calls) -> Lex (chatbot for basic queries) -> Amazon Polly (text to speech) -> Amazon Comprehend (sentiment analysis)
+     Text based support: Lex (chatbot) -> Lambda (BE integration) -> Comprehend (sentiment analysis) -> S3 (store chatlogs) -> Quicksight (visual analytics)
+
 
 
 
