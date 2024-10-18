@@ -39,7 +39,21 @@ Ans: NACL
 10. AWS Event driven architecture
 Ans: https://medium.com/@sudarkodimuthiah22/event-driven-architecture-solutions-on-aws-bc90ccc55dc8
 
+11. How to securely share resources across AWS accounts?
+Ans: AWS Resource Access Manager 
 
+12. How to restrict access to certain AWS services?
+Ans: IAM Policy (User, group, role level within a single AWS account)
+     Service controlled policy (SCP in AWS Organization - at account or OU level)
+     Resource based policy (only in some services eg. S3, Lambda, SQS)
+
+     Even if an IAM policy grants permission, an SCP can override and deny that permission at the account level.
+     SCP can block access to services even for the root user in the account.
+     IAM - allow & deny access 
+     SCP - only deny access 
+
+     Resource based policy are used in cross-account access.
+     IAM policy works if IAM user and S3 bucket are in same account.
 
 
 
