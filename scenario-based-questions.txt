@@ -28,6 +28,18 @@ Ans: Amazon Lex (bots), Amazon Connect (cloud contact centers)
      Voice based support: Connect (handles calls) -> Lex (chatbot for basic queries) -> Amazon Polly (text to speech) -> Amazon Comprehend (sentiment analysis)
      Text based support: Lex (chatbot) -> Lambda (BE integration) -> Comprehend (sentiment analysis) -> S3 (store chatlogs) -> Quicksight (visual analytics)
 
+9. How do you secure EC2 instances and VPC by controlling inbound and outbound traffic?
+Ans: NACL 
+      - Firewall for controlling traffic in and out of one or more subnets (optional layer)
+      - stateless i.e both inbound and outbound needs to be defined explicitly)
+     Security group 
+      - Controls inbound and outbound traffic for EC2 instances 
+      - stateful i.e if inbound is allowed for a port, outbound is automatically allowed)
+
+10. AWS Event driven architecture
+Ans: https://medium.com/@sudarkodimuthiah22/event-driven-architecture-solutions-on-aws-bc90ccc55dc8
+
+
 
 
 
